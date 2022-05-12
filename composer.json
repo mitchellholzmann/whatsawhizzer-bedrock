@@ -41,7 +41,8 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
     "htmlburger/carbon-fields-plugin": "^3.3",
-    "roots/soil": "^4.0"
+    "roots/soil": "^4.0",
+    "roots/acorn": "^2.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6.2",
@@ -66,6 +67,9 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ],
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],
